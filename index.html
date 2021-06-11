@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            background-color: lightgrey;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    Practice1: Insert Lemon and Pinapple item into array["Banana", "Orange", "Apple", "Mango"] and retrograde sort
+    the new array.
+    <div id="p1">
+        <ul id="li1">
+        </ul>
+    </div>
+
+    Practice2: Sort array[40, 100, 1, 5, 25, 10]
+    <div id="p2"></div>
+
+    Practice3: Sort [{type:"Volvo", year:2016}, {type:"Saab", year:2001}, {type:"BMW", type:2010}] by year
+    <div id="p3"></div>
+
+    Practice4: Output array[4, 9, 16, 25] with a style of index:value
+    <div id="p4"></div>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(0, 0, "Lemon", "Pinapple");
+        var newarray1 = fruits.sort();
+        var newarray2 = newarray1.reverse();
+        var output1 = "";
+        for (var i = 0; i < newarray2.length; i++) {
+            output1 += "<li>" + newarray2[i] + "</li>";
+        }
+        document.getElementById("li1").innerHTML = output1;
+
+        var points = [40, 100, 1, 5, 25, 10];
+        output2 = points.sort(function (a, b) { return a - b });
+        document.getElementById("p2").innerHTML = output2;
+
+        var output3 = "";
+        var cars = [{ type: "Volvo", year: 2016 }, { type: "Saab", year: 2001 }, { type: "BMW", year: 2010 }];
+        newarray3 = cars.sort(function (a, b) { return a.year - b.year });
+        for (var l = 0; l < cars.length; l++) {
+            output3 = output3 + newarray3[l].type + ": " + newarray3[l].year + "<br>";
+        }
+        document.getElementById("p3").innerHTML = output3;
+
+        var output4 = "";
+        var numbers = [4, 9, 16, 25];
+        var k = 0;
+        numbers.forEach(myFunction);
+        function myFunction(value) {
+            var m = k++;
+            output4 = output4 + "index" + m + ": " + value + "<br>";
+
+        }
+
+        output4;
+        document.getElementById("p4").innerHTML = output4;
+    </script>
+</body>
+
+</html>
